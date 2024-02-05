@@ -9,6 +9,7 @@ body {
     padding: 5px;
     margin: auto;
     background-image: url("./assets/tilemap1.jpg");
+    border-radius: 5px;
 }
 
 .titleContainer {
@@ -21,9 +22,10 @@ body {
     padding-bottom: 2px;
     width: 20%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.45);
     border-radius: 5px;
     text-align: center;
+    backdrop-filter: blur(3px);
 }
 
 .inventoryTitle {
