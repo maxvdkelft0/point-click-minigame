@@ -13,7 +13,7 @@ body {
     width: 800px;
     margin: auto;
     position: relative;
-    background-image: url("./assets/tilemap1.jpg");
+    background-image: url("../assets/tilemap1.jpg");
     border-radius: 5px;
 }
 
@@ -32,7 +32,7 @@ body {
 .bottomContainer {
     color: white;
     background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px ;
     backdrop-filter: blur(3px);
     width: 780px;
     height: 35px;
