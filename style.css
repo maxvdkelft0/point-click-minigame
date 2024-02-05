@@ -1,20 +1,20 @@
 body {
-    background-color: black;
+    background-color: #020617;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.gameContainer {
-    height: 608px;
-    width: 800px;
-    padding: 5px;
-    margin: auto;
-    background-image: url("./assets/tilemap1.jpg");
-    border-radius: 5px;
 }
 
 .titleContainer {
     color: white;
     text-align: center;
+}
+
+.gameContainer {
+    height: 608px;
+    width: 800px;
+    margin: auto;
+    position: relative;
+    background-image: url("./assets/tilemap1.jpg");
+    border-radius: 5px;
 }
 
 .inventoryContainer {
@@ -23,11 +23,56 @@ body {
     width: 20%;
     color: white;
     background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 5px;
+    border-radius: 5px 0px 5px 0px;
     text-align: center;
     backdrop-filter: blur(3px);
+    margin: 0px 10px 10px 0px;
+}
+
+.bottomContainer {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+    backdrop-filter: blur(3px);
+    width: 780px;
+    height: 35px;
+    margin: 430px 0px 0px 0px;
+    padding: 10px;
 }
 
 .inventoryTitle {
     font-weight: 700;
+}
+
+.characterContainer {
+    position: absolute;
+    top: 300px;
+    left: 367px;
+}
+
+
+
+@keyframes textShine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+.title {
+    background: linear-gradient(
+        to right,
+        #ffffff 20%,
+        #ffffff18 30%,
+        #ffffff 70%,
+        #ffffff 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
 }
