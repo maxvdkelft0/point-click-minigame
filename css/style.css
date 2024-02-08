@@ -1,8 +1,10 @@
+/* Body Class */
 body {
     background-color: #020617;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Main Classes */
 .titleContainer {
     color: white;
     text-align: center;
@@ -31,12 +33,14 @@ body {
 
 .bottomContainer {
     color: white;
-    background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 0px 0px 5px 5px ;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: medium;
+    border-radius: 0px 0px 5px 5px;
     backdrop-filter: blur(3px);
     width: 780px;
     height: 35px;
-    margin: 430px 0px 0px 0px;
+    position: absolute;
+    bottom: 0px;
     padding: 10px;
 }
 
@@ -50,29 +54,22 @@ body {
     left: 367px;
 }
 
-
-
+/* Title Animation */
 @keyframes textShine {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
 
-.title {
-    background: linear-gradient(
-        to right,
-        #ffffff 20%,
-        #ffffff18 30%,
-        #ffffff 70%,
-        #ffffff 80%
-    );
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#title {
+    background: linear-gradient(to right, #ffffff 20%, #ffffff18 30%, #ffffff 70%, #ffffff 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
     background-size: 500% auto;
-    animation: textShine 5s ease-in-out infinite alternate;
+    animation: textShine 2s ease-in-out infinite alternate;
 }
