@@ -86,17 +86,39 @@ function invHandler(action, itemName) {
 
     switch (action) {
         case "add":
-            const invItem = document.createElement("li")
-            invItem.id = "inv-" + itemName
-            invItem.innerText = itemName
-            invList.appendChild(invItem)
+            gameState.inventory.push(itemName)
             break;
 
         case "delete":
-            document.getElementById("inv-" + itemName).remove();
+            gameState.inventory.find(function (item, index) {
+                if (item == itemName) {
+                    var index = gameState.inventory.indexOf(item);
+                    if (index !== -1)
+                        gameState.inventory.splice(index, 1)
+                }
+            })
             break
 
         default:
 
     }
+
+    updateInv(gameState.inventory, invList)
+
+}
+
+/**
+ * update inventoryList
+ * @param {Array} inventory array of items 
+ * @param {HTMLElement} invList html <ul> element
+ */
+function updateInv(inventory, invList) {
+    invList.innerHTML = '';
+    inventory.forEach(function (item) {
+        const invItem = document.createElement("li")
+        invItem.id = "inv-" + item
+        invItem.innerText = item
+        invList.appendChild(invItem)
+        console.log(item)
+    })
 }
