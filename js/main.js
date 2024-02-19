@@ -1,11 +1,16 @@
-// Variables
+// Main Variables
 const gameWindow = document.getElementById("gameContainer"); // Game Container
 const mainCharacter = document.getElementById("characterContainer"); // Character Container
 const offsetCharacter = 16 // Offset in PX
 const door1 = document.getElementById("door1") // Door 1 ID
 const sign = document.getElementById("sign") // Sign ID
 
-// Inventory
+// Game states
+gameState = {
+    "door2locked": true
+}
+
+// Inventory Variables
 const invBox = document.getElementById("inventoryContainer") // Inv div
 const invList = document.getElementById("inventoryList") // Inv ul
 
@@ -34,6 +39,22 @@ gameWindow.onclick = function (e) {
                 keyElement.innerText = "Key"
                 invList.appendChild(keyElement)
             }
+
+            break;
+        case "door2":
+            if (gameState.door2locked == true) {
+                if (document.getElementById("inv-key") !== null) {
+                    gameState.door2locked = false
+                    console.log("[Debug-Log]: Door unlocked")
+
+                } else {
+                    alert("You don't have the key to open this door!")
+                }
+
+            } else {
+                console.log("[Debug-Log]: Enter building")
+            }
+
 
             break;
 
