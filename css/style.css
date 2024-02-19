@@ -22,7 +22,7 @@ body {
     border-radius: 5px;
 }
 
-.inventoryContainer {
+#inventoryContainer {
     padding-top: 2px;
     padding-bottom: 2px;
     width: 20%;
@@ -79,6 +79,17 @@ body {
     left: 10px;
     opacity: 0.5;
     border-radius: 5px;
+}
+
+#key1 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    border-radius: 5px;
+    background-color: rgb(213, 174, 32);
+    top: 101px;
+    left: 496px;
 }
 
 /* Title Animation */
