@@ -25,7 +25,7 @@ gameWindow.onclick = function (e) {
     mainCharacter.style.left = x - offsetCharacter + "px";
     mainCharacter.style.top = y - offsetCharacter + "px";
 
-    console.log("[Debug-Log]: " + e.target.id)
+    console.log("[Click-Element-Log]: " + e.target.id)
 
     switch (e.target.id) {
         case "door1":
@@ -48,6 +48,7 @@ gameWindow.onclick = function (e) {
 
                 } else {
                     alert("You don't have the key to open this door!")
+                    console.log("[Debug-Log]: Don't have the 'key' item. So you can't open the door.")
                 }
 
             } else {
@@ -71,6 +72,9 @@ gameWindow.onclick = function (e) {
             break;
     }
 }
+
+
+// Functions
 
 /**
  * Function to handle the inventory
@@ -119,6 +123,6 @@ function updateInv(inventory, invList) {
         invItem.id = "inv-" + item
         invItem.innerText = item
         invList.appendChild(invItem)
-        console.log(item)
+        console.log("[Update-Inventory-Log]: " + item)
     })
 }
