@@ -11,25 +11,32 @@
 <body>
     <div class="mainContainer">
 
+        <!-- Title -->
         <div class="titleContainer">
             <h1 id="title">Point & Click Minigame</h1>
         </div>
 
+        <!-- Game Container -->
         <div id="gameContainer">
 
+            <!-- Character -->
             <div id="characterContainer">
                 <img src="./assets/cape_man/animated-character-1-idle.gif" draggable="false" alt="Character">
             </div>
 
+            <!-- Inventory -->
             <div id="inventoryContainer">
                 <p class="inventoryTitle">Inventory</p>
                 <ul id="inventoryList">
                 </ul>
             </div>
 
+            <!-- Dialog -->
             <div class="bottomContainer">
-                NPC: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus sit amet diam interdum
-                interdum et in sem.
+                <div id="mainCharacterSpeech" class="speech-bubble">
+                </div>
+                <div id="counterSpeech" class="speech-bubble">
+                </div>
             </div>
 
             <!-- Foreground Items -->
@@ -40,6 +47,14 @@
 
         </div>
     </div>
+
+
+    <audio id="mcAudio">
+        <source src="assets/audio/Gibberish - Sound Effect_01.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cAudio">
+        <source src="assets/audio/high pitch voice.mp3" type="audio/mpeg">
+    </audio>
     <script src="./js/main.js"></script>
 </body>
 

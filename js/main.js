@@ -5,6 +5,14 @@ const offsetCharacter = 16 // Offset in PX
 const door1 = document.getElementById("door1") // Door 1 ID
 const sign = document.getElementById("sign") // Sign ID
 
+
+// Dialog
+const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
+const counterSpeech = document.getElementById("counterSpeech");
+const mcAudio = document.getElementById("mcAudio");
+const cAudio = document.getElementById("cAudio");
+const sec = 1000;
+
 // Game states
 gameState = {
     "door2locked": true,
@@ -36,6 +44,9 @@ gameWindow.onclick = function (e) {
                 console.log("[Debug-Log]: Found key!")
                 document.getElementById('key1').remove();
                 invHandler("add", "key")
+                setTimeout(showMessage, 4 * sec, counterSpeech, cAudio, "NPC: I can talk you know..dummy");
+                setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "You: You don't have to be so mean.");
+                setTimeout(showMessage, 12 * sec, counterSpeech, cAudio, "NPC: You should check the north house..");
             }
 
             break;
@@ -125,4 +136,28 @@ function updateInv(inventory, invList) {
         invList.appendChild(invItem)
         console.log("[Update-Inventory-Log]: " + item)
     })
+}
+
+/**
+ * Shows a message in a speech bubble
+ * @param {getElementById} targetBalloon 
+ * @param {getElementById} targetSound 
+ * @param {string} message 
+ */
+function showMessage(targetBalloon, targetSound, message) {
+    targetSound.currentTime = 0;
+    targetSound.play();
+    targetBalloon.style.opacity = "1";
+    targetBalloon.innerText = message;
+    setTimeout(hideMessage, 4 * sec, targetBalloon, targetSound);
+}
+
+/**
+ * Set the opacity to 0
+ * @param {getElementById} targetBalloon 
+ * @param {getElementById} targetSound 
+ */
+function hideMessage(targetBalloon, targetSound) {
+    targetSound.pause();
+    targetBalloon.style.opacity = "0";
 }
